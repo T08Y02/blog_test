@@ -19,7 +19,7 @@
     </script>
     
     <body>
-        <h1>Blog Name</h1>
+        <h1>Blog Name (category)</h1>
         <a href='/posts/create'>create</a>
         <div class='posts'>
             @foreach ($posts as $post)
@@ -40,6 +40,9 @@
         </div>
         <div class = 'paginate'>
             {{$posts -> links()}}
+        </div>
+        <div class="footer">
+            <a href="/">戻る</a>
         </div>
     </body>
 </html>
