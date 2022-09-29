@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index(Post $post) //インポートしたPostをインスタンス化して$postとして使用。
     {
-         return view('posts/index')->with(['posts' => $post->getPaginateByLimit(5)]); 
+         return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]); 
     }
     
     public function show(Post $post)
@@ -33,6 +33,7 @@ class PostController extends Controller
     public function store(Post $post, PostRequest $request) // 引数をRequestからPostRequestにする
     {
         $input = $request['post'];
+        $input += ['user_id' => $request->user()->id];
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
@@ -40,6 +41,7 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
         $input_post = $request['post'];
+        $input_post += ['user_id' => $request->user()->id]; 
         $post->fill($input_post)->save();
         return redirect('/posts/' . $post->id);
     }

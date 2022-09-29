@@ -1,0 +1,48 @@
+body{
+    background-color: #4EC199;
+}
+
+h1{
+    color: #000000;
+    font-size: 40px;
+}
+
+h2{
+    color: #000000;
+    font-size : 30px;
+}
+
+.sosobig{
+    font-size : 25px;
+}
+
+.title{
+    font-size : 30px;
+} 
+
+.body{
+    color: #000000;
+    font-size: 20px;
+}
+
+p{
+    margin : 10px;
+}
+
+a, .link{
+    color  : #1a0dab;
+    text-decoration:underline;
+}
+
+.post{
+    margin : 30px ;
+    padding : 20px ;
+    border : 5px solid maroon ;
+    background-color : lightgreen ;
+}
+
+/*pagination*/
+.paginate{
+    margin : 30px ;
+    font-size: 20px;
+}
