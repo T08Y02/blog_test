@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index(Post $post) //インポートしたPostをインスタンス化して$postとして使用。
     {
-         return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]); 
+         return view('posts/index')->with(['posts' => $post->getPaginateByLimit(2)]); 
     }
     
     public function show(Post $post)
@@ -49,6 +49,6 @@ class PostController extends Controller
     public function delete(Post $post)
     {
         $post->delete();
-        return redirect('/');
+        return redirect('/home');
     }
 }

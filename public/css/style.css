@@ -12,6 +12,11 @@ h2{
     font-size : 30px;
 }
 
+h3{
+    color: #000000;
+    font-size : 15px;
+}
+
 .sosobig{
     font-size : 25px;
 }
@@ -20,7 +25,7 @@ h2{
     font-size : 30px;
 } 
 
-.body{
+.body, .content{
     color: #000000;
     font-size: 20px;
 }
@@ -40,6 +45,21 @@ a, .link{
     border : 5px solid maroon ;
     background-color : lightgreen ;
 }
+
+.submitbutton{
+    font-size : 20px;
+    padding : 10px ;
+    margin : 10px ;
+    border : 2px solid black;
+    color  : #1a0dab;
+    text-decoration:underline;
+}
+
+.movetoright{
+    margin-left:100px;    
+}
+
+
 
 /*pagination*/
 .paginate{
