@@ -23,7 +23,7 @@ class Post extends Model
         return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }*/
     
-    function getPaginateByLimit(int $limit_count = 1)
+    function getPaginateByLimit(int $limit_count)
     {
         return $this::with(['category', 'user'])->orderBy('updated_at', 'DESC')->paginate($limit_count);
         

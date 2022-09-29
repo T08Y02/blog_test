@@ -27,7 +27,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
-    Route::get('/', 'index')->name('index');
+    Route::get('/home', 'index')->name('index');
     Route::post('/posts', 'store')->name('store');
     Route::get('/posts/create', 'create')->name('create');
     Route::get('/posts/{post}', 'show')->name('show');

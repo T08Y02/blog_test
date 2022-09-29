@@ -24,28 +24,30 @@
     </script>
     
     <body>
-        <h1>Blog Name</h1>
-        <a class = 'sosobig' href='/posts/create'>create</a>
-        <div class='posts'>
-            @foreach ($posts as $post)
-                <div class='post'>
-                    <h2 class='title'>
-                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
-                    </h2>
-                    <p class='body'>{{ $post->body }}</p>
-                    <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
-                    <p>writer : {{ $post->user->name }}</p>
-                    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class = 'link' type="button" onclick="deletePost({{ $post->id }})">delete</button> 
-                    </form>
-                </div>
-                
-            @endforeach
-        </div>
-        <div class = 'paginate'>
-            {{$posts -> links()}}
+        <div class = "movetoright">
+            <h1>Blog Name</h1>
+            <a class = 'sosobig' href='/posts/create'>create</a>
+            <div class='posts'>
+                @foreach ($posts as $post)
+                    <div class='post'>
+                        <h2 class='title'>
+                            <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                        </h2>
+                        <p class='body'>{{ $post->body }}</p>
+                        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+                        <p>writer : {{ $post->user->name }}</p>
+                        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class = 'link' type="button" onclick="deletePost({{ $post->id }})">delete</button> 
+                        </form>
+                    </div>
+                    
+                @endforeach
+            </div>
+            <div class = 'paginate'>
+                {{$posts -> links()}}
+            </div>
         </div>
     </body>
 </html>
