@@ -59,6 +59,11 @@ a, .link{
     margin-left:100px;    
 }
 
+.questions{
+    font-size = 10px;
+    background-color: #FEF1F9;
+    border : 1px solid maroon ;
+}
 
 
 /*pagination*/
