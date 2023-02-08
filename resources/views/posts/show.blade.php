@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        　index
+        　show
     </x-slot>
 
 <!DOCTYPE HTML>
