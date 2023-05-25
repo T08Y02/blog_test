@@ -26,6 +26,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/home', [PostController::class,'index'])->name('index2');
+
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
     Route::get('/home', 'index')->name('index');
     Route::post('/posts', 'store')->name('store');
@@ -35,6 +37,9 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
     Route::delete('/posts/{post}', [PostController::class,'delete']);
     Route::get('/posts/{post}/edit', 'edit')->name('edit');
 });
+
+
+//Route::get('/categories/{category}', 'CategoryController@index');
 
 Route::controller(CategoryController::class)->middleware(['auth'])->group(function(){
     Route::get('/categories/{category}', 'index');

@@ -3,15 +3,7 @@
         　index
     </x-slot>
 
-<!DOCTYPE HTML>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-        <!-- Fonts -->
-        <!-- link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" -->
-        <link rel="stylesheet" href="/css/style.css" >
-    </head>
+
     
     <script>
         function deletePost(id) {
@@ -23,7 +15,11 @@
         }
     </script>
     
-    <body>
+    <!--body -->
+    <link rel="stylesheet" href="/css/style.css" >
+        @auth
+          {{ Auth::user()->name }}
+        @endauth
         <div class = "movetoright">
             <h1>Blog Name</h1>
             <a class = 'sosobig' href='/posts/create'>create</a>
@@ -58,7 +54,7 @@
                 @endforeach
             </div>
         </div>
-    </body>
+    <!-- /body -->
 </html>
 
 </x-app-layout>
